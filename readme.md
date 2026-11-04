@@ -1,6 +1,5 @@
-DBMS & SQL Lab (BCS552)
 
-📚 About the Repository
+# 📚 About the Repository
 
 This repository contains all 15 lab assignments of Database Management Systems (DBMS) & SQL Lab (BCS552) for B.Tech Computer Science Engineering, Third Year, at Invertis University, Bareilly.
 
@@ -8,7 +7,7 @@ The purpose of these practical assignments is to develop a strong understanding 
 
 Each assignment includes SQL statements and their corresponding outputs for practical learning and reference.
 
-🎯 Objectives
+# 🎯 Objectives
 
 - Understand the fundamentals of DBMS and SQL.
 - Learn to create and manage database tables.
@@ -24,33 +23,46 @@ Each assignment includes SQL statements and their corresponding outputs for prac
 - Create and use database views.
 - Understand indexes and their applications.
 
-🛠️ Technologies Used
+# 🛠️ Technologies Used
 
 - SQL – Structured Query Language
 - DBMS – Database Management System
 - MySQL / Compatible SQL Environment – For executing queries
 - Git & GitHub – For version control and repository management
 
-📂 Lab Assignments
+# 📂 Lab Assignments
 
-Assignment No.| Assignment Name
-01| Creating a Table and Adding Rows
-02| Updating and Deleting Rows
-03| Selecting Columns and Rows with WHERE
-04| Combining Conditions
-05| Pattern Matching with LIKE
-06| Sorting Rows and Removing Repeats
-07| Using Aggregate Functions
-08| Grouping Rows and Using HAVING
-09| Aliases and CASE
-10| Joining Two Tables with INNER JOIN
-11| Other Kinds of Joins
-12| Using a Subquery
-13| UNION and INTERSECT
-14| Creating and Using a View
-15| Indexes and Adding a Row
+01. Creating a Table and Adding Rows
 
-📖 Concepts Covered
+02. Updating and Deleting Rows
+
+03. Selecting Columns and Rows with WHERE
+
+04. Combining Conditions
+
+05. Pattern Matching with LIKE
+
+06. Sorting Rows and Removing Repeats
+
+07. Using Aggregate Functions
+
+08. Grouping Rows and Using HAVING
+
+09. Aliases and CASE
+
+10. Joining Two Tables with INNER JOIN
+
+11. Other Kinds of Joins
+
+12. Using a Subquery
+
+13. UNION and INTERSECT
+
+14. Creating and Using a View
+
+15. Indexes and Adding a Row
+
+# 📖 Concepts Covered
 
 1. Database Operations
 
@@ -100,7 +112,7 @@ Assignment No.| Assignment Name
 - Views
 - Indexes
 
-🚀 How to Use This Repository
+# 🚀 How to Use This Repository
 
 1. Clone or download this repository to your computer.
 2. Open your preferred SQL environment or database management tool.
@@ -110,7 +122,7 @@ Assignment No.| Assignment Name
 6. Check the output against the expected results.
 7. Save your SQL queries and output screenshots for practical submission.
 
-💻 Sample SQL Query
+# 💻 Sample SQL Query
 
 CREATE TABLE student (
     roll_no INT,
@@ -126,16 +138,19 @@ VALUES
 
 SELECT * FROM student;
 
-Expected Output
+
+# Expected Output
 
 roll_no| name| marks
+
 101| Asha| 78
+
 102| Rohan| 64
+
 103| Neha| 88
 
-🎓 Learning Outcomes
 
-After completing these assignments, students will be able to:
+# 🎓 Learning Outcomes
 
 - Write and execute basic SQL queries.
 - Create and manipulate database tables.
@@ -146,19 +161,16 @@ After completing these assignments, students will be able to:
 - Create database views and indexes.
 - Understand practical database management concepts.
 
-📌 Important Notes
 
-- Complete all 15 assignments in the prescribed order.
-- Execute the SQL queries and verify their outputs.
-- Keep the SQL statements and output screenshots for each task.
-- Follow the practical submission instructions provided by the university.
-- Use meaningful file names and maintain an organized repository structure.
-
-👨‍💻 Author
+# 👨‍💻 Author
 Ayush Kumar
+
 B.Tech CSE Student
+
 Course: DBMS & SQL Lab
+
 Course Code: BCS552
+
 University: Invertis University, Bareilly
 
 ---
