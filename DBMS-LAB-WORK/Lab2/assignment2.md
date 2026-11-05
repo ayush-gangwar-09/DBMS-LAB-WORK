@@ -1,45 +1,51 @@
 # Assignment 2: Updating and Deleting Rows
 
-1. AIM
+# Aim
 
-To learn how to update existing records and delete records from a table using SQL commands.
+To understand how to modify existing records and remove unwanted records from a database table.
 
-2. THEORY
+# Problem Statement
 
-SQL (Structured Query Language) is used to store, manage and manipulate data in a database.
-Two important SQL commands are UPDATE and DELETE.
+Create a stock table containing item codes, item names and quantities. Perform update and delete operations and verify the changes after each operation.
 
-**1. UPDATE Command**
-      The UPDATE command is used to modify existing records in a table. We use the WHERE clause to specify which row needs to be updated.
+# Tasks
 
-Syntax:
-```sql
-UPDATE table_name
-SET column_name = value
-WHERE condition;
-```
+**Task 1: Update Item Quantity**
 
-**2. DELETE Command**
-      The DELETE command is used to remove existing records from a table. The WHERE clause specifies which row should be deleted.
+- Change the quantity of the item having item_code 1 (Notebook) from 50 to 80.
 
-Syntax:
-```sql
-DELETE FROM table_name
-WHERE condition;
-```
+- Display the stock table after updating the quantity to verify the modification.
 
-**3. WHERE Clause**
-      The WHERE clause is used to select specific rows based on a given condition.
+**Task 2: Increase Item Quantity**
 
- 3. PROCEDURE
+- Increase the quantity of the item having item_code 2 (Pen) by 10.
 
-1. Create a table named stock.
-2. Insert three records into the stock table.
-3. Update the quantity of Notebook from 50 to 80.
-4. Add 10 to the quantity of Pen.
-5. Delete the record of Bag from the table.
-6. Display the final table using SELECT.
+ - The quantity should change from 120 to 130.
 
- 4. Result
+ - Display the updated stock table.
 
-Successfully performed UPDATE and DELETE operations on the stock table using SQL commands.
+**Task 3: Delete a Record**
+
+- Delete the record of the item having item_code 3 (Bag) from the stock table.
+
+Display the remaining records to verify that the item has been deleted successfully.
+
+# Objectives
+
+- To understand the UPDATE operation.
+- To modify existing table records.
+- To perform mathematical operations on column values.
+- To delete unwanted records.
+- To verify database modifications.
+
+# Concepts Used
+
+- UPDATE
+- SET
+- WHERE
+- DELETE
+- SELECT
+
+# Conclusion
+
+Successfully performed update and delete operations on the stock table and verified the changes after each operation.

@@ -1,8 +1,12 @@
-
-
 # Assignment 5: Pattern Matching with LIKE
 
-**Aim:** To find titles that match a specific pattern using the SQL `LIKE` operator.
+# Aim
+
+To retrieve records from a database table by matching specific text patterns using the LIKE operator.
+
+# Problem Statement
+
+Create a book table containing book titles. Retrieve books whose titles match different character patterns using the LIKE operator and wildcard characters.
 
 ## Theory
 
@@ -13,98 +17,39 @@ There are two commonly used wildcard characters:
 1. `%` – Represents zero or more characters.
 2. `_` – Represents exactly one character.
 
-## Step 1: Create Database
+# Tasks
 
-```sql
-CREATE DATABASE IF NOT EXISTS college;
-USE college;
-```
+**Task 1: Search Titles Starting with Data**
 
-## Step 2: Create Table
+- Retrieve books whose titles start with the word "Data".
+- Use the pattern 'Data%' to match titles beginning with Data.
 
-```sql
-CREATE TABLE book (
-    title VARCHAR(40),
-    category VARCHAR(20),
-    copies INT
-);
-```
+**Task 2: Search Titles Ending with C**
 
-## Step 3: Insert Records
+- Retrieve books whose titles end with the character C.
+- Use the pattern '%C' to match titles ending with C.
 
-```sql
-INSERT INTO book (title, category, copies)
-VALUES
-('Database Systems', 'Computer', 3),
-('Digital Electronics', 'Electronics', 2),
-('Data Structures in C', 'Computer', 2),
-('Short Stories', 'Literature', 1);
-```
+**Task 3: Search Titles Using a Specific Character Position**
 
-## Step 4: Display All Records
+- Retrieve books whose second character is 'h'.
+- Use the pattern '_h%' to match titles with 'h' in the second position.
 
-```sql
-SELECT * FROM book;
-```
+# Objectives
 
-**Output:**
+- To understand the LIKE operator.
+- To perform pattern matching in SQL.
+- To understand wildcard characters.
+- To search records using starting and ending characters.
+- To retrieve records based on character positions.
 
-| title | category | copies |
-|---|---|---:|
-| Database Systems | Computer | 3 |
-| Digital Electronics | Electronics | 2 |
-| Data Structures in C | Computer | 2 |
-| Short Stories | Literature | 1 |
+# Concepts Used
 
-## Task 1: Show titles that start with Data
+- SELECT
+- WHERE
+- LIKE Operator
+- Wildcard Characters (% and _)
+- Pattern Matching
 
-**SQL Query:**
+# Conclusion
 
-```sql
-SELECT title
-FROM book
-WHERE title LIKE 'Data%';
-```
-
-**Output:**
-
-| title |
-|---|
-| Data Structures in C |
-
-## Task 2: Show titles that end with the letter C
-
-**SQL Query:**
-
-```sql
-SELECT title
-FROM book
-WHERE title LIKE '%C';
-```
-
-**Output:**
-
-| title |
-|---|
-| Data Structures in C |
-
-## Task 3: Show titles whose second letter is h
-
-**SQL Query:**
-
-```sql
-SELECT title
-FROM book
-WHERE title LIKE '_h%';
-```
-
-**Output:**
-
-| title |
-|---|
-| Short Stories |
-
-## Conclusion
-
-In this assignment, we learned how to use the SQL `LIKE` operator for pattern matching.
- We used `%` and `_` wildcards to search for book titles based on different conditions.
+Successfully retrieved book records by matching different text patterns using the LIKE operator and wildcard characters in SQL.

@@ -1,79 +1,63 @@
 
 # Assignment 15: Indexes and Adding a Row
 
-**Aim:** To create an index on a column, read rows by that column, and add a row.
+# Aim
 
-## Theory
+To create an index on a database table, retrieve records using conditions and insert new records into the table.
+
+# Problem Statement
+
+Create a customer table containing customer IDs, names and cities. Create an index on the city column, retrieve customers from a specific city and insert a new customer record.
+
+# Theory
 
 An Index in SQL is used to improve the speed of data retrieval from a table. It helps the database find records quickly without searching every row.
 
-1. INDEX – Used to make data searching faster.
-2. CREATE INDEX – Used to create an index on a table column.
-3. WHERE – Used to filter records based on a condition.
-4. ORDER BY – Used to sort records in ascending or descending order.
-5. INSERT INTO – Used to add new records into a table.
-6. PRIMARY KEY – Uniquely identifies each record in a table.
-7. NOT NULL – Ensures that a column cannot contain NULL values.
+1. `INDEX` – Used to make data searching faster.
+2. `CREATE INDEX` – Used to create an index on a table column.
+3. `WHERE` – Used to filter records based on a condition.
+4. `ORDER BY` – Used to sort records in ascending or descending order.
+5. `INSERT INTO` – Used to add new records into a table.
+6. `PRIMARY KEY` – Uniquely identifies each record in a table.
+7. `NOT NULL` – Ensures that a column cannot contain NULL values.
 
-## Step 1: Create Database
+# Tasks
 
-CREATE DATABASE IF NOT EXISTS college;
-USE college;
+**Task 1: Create an Index on City**
 
-## Step 2: Create Customer Table
+- Create an index named idx_city on the city column of the customer table.
+- Use the CREATE INDEX statement.
+- Understand how indexes help improve data retrieval performance.
 
-CREATE TABLE customer (
-    customer_id INT PRIMARY KEY,
-    name VARCHAR(30) NOT NULL,
-    city VARCHAR(20)
-);
+**Task 2: Retrieve Customers from Delhi**
 
-## Step 3: Insert Customer Records
+- Retrieve the names of customers whose city is Delhi.
+- Use the WHERE clause to filter customer records.
+- Arrange the customer names in ascending alphabetical order.
 
-INSERT INTO customer (customer_id, name, city)
-VALUES
-(1, 'Kiran', 'Kochi'),
-(2, 'Deepak', 'Delhi'),
-(3, 'Lata', 'Mumbai'),
-(4, 'Asha', 'Delhi');
+**Task 3: Insert a New Customer Record**
 
-## Step 4: Task 1 – Create an Index Named idx_city
+- Insert a new customer into the customer table.
+- Add customer ID 5, name Arjun and city Pune.
+- Display all records from the customer table after insertion.
 
-CREATE INDEX idx_city
-ON customer(city);
+# Objectives
 
-## Step 5: Task 2 – Show Customers Who Live in Delhi
+- To understand database indexes.
+- To create an index using CREATE INDEX.
+- To retrieve records using the WHERE clause.
+- To insert new records using INSERT INTO.
+- To understand how indexes support data retrieval.
 
-SELECT name
-FROM customer
-WHERE city = 'Delhi'
-ORDER BY name ASC;
+# Concepts Used
 
-**Output:**
+- CREATE INDEX
+- INSERT INTO
+- SELECT
+- WHERE
+- ORDER BY
+- Database Indexing
 
-name
-Asha
-Deepak
+# Conclusion
 
-## Step 6: Task 3 – Add a New Customer
-
-INSERT INTO customer (customer_id, name, city)
-VALUES (5, 'Arjun', 'Pune');
-
-## Step 7: Display All Customer Records
-
-SELECT * FROM customer
-ORDER BY customer_id ASC;
-
-**Output:**
-
-customer_id    name       city
-1              Kiran      Kochi
-2              Deepak     Delhi
-3              Lata       Mumbai
-4              Asha       Delhi
-5              Arjun      Pune
-
-## Result
-
-Successfully created an index named idx_city on the city column, retrieved customers living in Delhi in alphabetical order, and inserted a new customer record into the customer table.
+Successfully created an index on the city column, retrieved customer records based on city and inserted a new customer record into the database table.

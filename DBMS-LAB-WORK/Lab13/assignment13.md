@@ -1,91 +1,66 @@
+# Assignment 13: UNION and INTERSECT
 
-## Assignment 13: UNION and INTERSECT
+# Aim
 
-## Aim:
-To combine two lists of names, and find the names in both lists.
+To combine records from multiple tables and retrieve common records using UNION, UNION ALL and INTERSECT set operations.
+
+# Problem Statement
+
+Create two tables named club_a and club_b containing member names. Perform different set operations to combine records and identify common members from both tables.
 
 ## Theory:
 
 UNION and INTERSECT are SQL set operators used to combine or compare the results of two SELECT statements.
 
-1. UNION – Combines the results of two queries and removes duplicate records.
-2. INTERSECT – Returns only the records that are common in both queries.
-3. UNION ALL – Combines the results of two queries and includes duplicate records.
-4. ORDER BY – Used to sort the result in ascending or descending order.
-5. SELECT – Used to retrieve data from a table.
+1. `UNION` – Combines the results of two queries and removes duplicate records.
+2. `INTERSECT` – Returns only the records that are common in both queries.
+3. `UNION ALL` – Combines the results of two queries and includes duplicate records.
+4. `ORDER BY` – Used to sort the result in ascending or descending order.
+5. `SELECT` – Used to retrieve data from a table.
 
-## Step 1: Create Database
+# Tasks
 
-CREATE DATABASE IF NOT EXISTS college;
-USE college;
+**Task 1: Combine Records Using UNION**
 
-## Step 2: Create Club A Table
+- Retrieve all member names from club_a and club_b.
+- Combine the results using UNION.
+- Remove duplicate names from the combined result.
+- Arrange the final records in ascending order.
 
-CREATE TABLE club_a (
-    student_name VARCHAR(30)
-);
+**Task 2: Find Common Records Using INTERSECT**
 
-## Step 3: Insert Club A Records
+- Retrieve member names that are present in both club_a and club_b.
+- Use the INTERSECT operation.
+- Display only the common member names in sorted order.
 
-INSERT INTO club_a (student_name)
-VALUES ('Asha'), ('Rohan'), ('Neha');
+**Task 3: Combine Records Using UNION ALL**
 
-## Step 4: Create Club B Table
+- Retrieve all member names from both tables.
+- Combine the results using UNION ALL.
+- Include duplicate names in the final result.
+- Arrange the combined records in ascending order.
 
-CREATE TABLE club_b (
-    student_name VARCHAR(30)
-);
+# Objectives
 
-Step 5: Insert Club B Records
+- To understand SQL set operations.
+- To combine records using UNION.
+- To retrieve common records using INTERSECT.
+- To understand the difference between UNION and UNION ALL.
+- To identify duplicate and common records.
 
-INSERT INTO club_b (student_name)
-VALUES ('Neha'), ('Pooja'), ('Meera');
+# Concepts Used
 
-Step 6: Task 1 – Show All Names Using UNION
+- UNION
+- UNION ALL
+- INTERSECT
+- SELECT
+- ORDER BY
+- Set Operations
 
-SELECT student_name FROM club_a
-UNION
-SELECT student_name FROM club_b
-ORDER BY student_name;
+# Conclusion
 
-Output:
+Successfully combined records, identified common members and handled duplicate values using UNION, UNION ALL and INTERSECT operations in SQL.
 
-student_name
-Asha
-Meera
-Neha
-Pooja
-Rohan
 
-Step 7: Task 2 – Show Common Names Using INTERSECT
 
-SELECT student_name FROM club_a
-INTERSECT
-SELECT student_name FROM club_b
-ORDER BY student_name;
 
-Output:
-
-student_name
-Neha
-
-Step 8: Task 3 – Show All Names Including Duplicates Using UNION ALL
-
-SELECT student_name FROM club_a
-UNION ALL
-SELECT student_name FROM club_b
-ORDER BY student_name;
-
-Output:
-
-student_name
-Asha
-Meera
-Neha
-Neha
-Pooja
-Rohan
-
-## Result:
-
-Successfully performed SQL operations using UNION, INTERSECT and UNION ALL to combine two lists of names, find common names and display duplicate records.

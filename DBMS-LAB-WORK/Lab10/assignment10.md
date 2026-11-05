@@ -1,8 +1,15 @@
 # Assignment 10: Joining Two Tables with INNER JOIN
 
-**Aim:** To join a department table and an employee table using INNER JOIN on dept_id.
+# Aim
 
-## Theory
+To retrieve related information from multiple tables using the INNER JOIN operation in SQL.
+
+
+# Problem Statement
+
+Create department and employee tables containing department details and employee information. Combine records from both tables to display employee details along with their department names.
+
+# Theory
 
 SQL JOIN is used to combine records from two or more tables based on a related column.
 
@@ -13,121 +20,45 @@ SQL JOIN is used to combine records from two or more tables based on a related c
 5. `ASC` – Used to sort records in ascending order.
 6. `DESC` – Used to sort records in descending order.
 
-## Step 1: Create Database
+# Tasks
 
-```sql
-CREATE DATABASE IF NOT EXISTS college;
-USE college;
-```
+**Task 1: Display Employee and Department Details**
 
-## Step 2: Create Department Table
+- Combine employee and department tables using INNER JOIN.
+- Display employee names and their corresponding department names.
+- Arrange the results in ascending order of employee names.
 
-```sql
-CREATE TABLE department (
-    dept_id INT,
-    dept_name VARCHAR(20)
-);
-```
+**Task 2: Retrieve Employees from Sales Department**
 
-## Step 3: Insert Department Records
+- Join the employee and department tables.
+- Retrieve only those employees who belong to the Sales department.
+- Display the required employee and department information.
 
-```sql
-INSERT INTO department (dept_id, dept_name)
-VALUES
-(10, 'Accounts'),
-(20, 'Sales'),
-(40, 'Research');
-```
+**Task 3: Display Employee Salary Details**
 
-## Step 4: Create Employee Table
+- Retrieve employee names, department names and salaries.
+- Combine both tables using INNER JOIN.
+- Arrange the results in descending order of salary.
 
-```sql
-CREATE TABLE employee (
-    emp_name VARCHAR(30),
-    dept_id INT,
-    salary INT
-);
-```
+# Objectives
 
-## Step 5: Insert Employee Records
+- To understand the concept of table joining.
+- To understand INNER JOIN.
+- To retrieve related records from multiple tables.
+- To use common columns for joining tables.
+- To filter and sort joined records.
 
-```sql
-INSERT INTO employee (emp_name, dept_id, salary)
-VALUES
-('Anita', 10, 90000),
-('Lata', 20, 55000),
-('Deepak', 10, 60000),
-('Pooja', 20, 42000);
-```
+# Concepts Used
 
-## Task 1: Show each employee name with the name of their department. Use INNER JOIN on dept_id and sort by employee name.
+- SELECT
+- INNER JOIN
+- ON
+- WHERE
+- ORDER BY
+- Relational Tables
 
-**SQL Query:**
+# Conclusion
 
-```sql
-SELECT employee.emp_name, department.dept_name
-FROM employee
-INNER JOIN department
-ON employee.dept_id = department.dept_id
-ORDER BY employee.emp_name;
-```
+Successfully combined employee and department tables using INNER JOIN and retrieved related information based on different conditions.
 
-**Output:**
 
-```text
-emp_name    dept_name
-----------------------
-Anita       Accounts
-Deepak      Accounts
-Lata        Sales
-Pooja       Sales
-```
-
-## Task 2: Show the names of the employees in the Sales department. Use INNER JOIN and WHERE, and sort by employee name.
-
-**SQL Query:**
-
-```sql
-SELECT employee.emp_name
-FROM employee
-INNER JOIN department
-ON employee.dept_id = department.dept_id
-WHERE department.dept_name = 'Sales'
-ORDER BY employee.emp_name;
-```
-
-**Output:**
-
-```text
-emp_name
---------
-Lata
-Pooja
-```
-
-## Task 3: Show the employee name, the department name and the salary, sorted by salary from highest to lowest.
-
-**SQL Query:**
-
-```sql
-SELECT employee.emp_name, department.dept_name, employee.salary
-FROM employee
-INNER JOIN department
-ON employee.dept_id = department.dept_id
-ORDER BY employee.salary DESC;
-```
-
-**Output:**
-
-```text
-emp_name    dept_name    salary
---------------------------------
-Anita       Accounts     90000
-Deepak      Accounts     60000
-Lata        Sales        55000
-Pooja       Sales        42000
-```
-
-## Result
-
-Successfully executed all three SQL tasks using INNER JOIN, ON, WHERE, and ORDER BY clauses to combine department and employee tables, filter employees by department, and sort employees according to their salaries.

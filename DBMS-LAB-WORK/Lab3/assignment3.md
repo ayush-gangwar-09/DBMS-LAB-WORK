@@ -1,81 +1,49 @@
- Assignment 3: Selecting Columns and Rows with WHERE
+# Assignment 3: Selecting Columns and Rows with WHERE
 
+# Aim
 
- Aim
-To show selected columns and display only those rows that match a given condition using the WHERE clause in SQL.
+To retrieve specific columns and rows from a database table using the SELECT statement and WHERE clause.
 
-### Set-up: Create Table and Insert Records
+# Problem Statement
 
-```sql
-CREATE TABLE student (
-    roll_no INT,
-    name VARCHAR(30),
-    marks INT
-);
+Create a student table containing roll numbers, names and marks. Retrieve specific student information according to different conditions.
 
-INSERT INTO student (roll_no, name, marks)
-VALUES
-(101, 'Asha', 78),
-(102, 'Rohan', 64),
-(103, 'Neha', 88),
-(104, 'Deepak', 52);
-```
+# Tasks
 
-### Task 1: Show only the name and marks of all students.
+**Task 1: Display Selected Columns**
 
-**SQL Query:**
+- Retrieve only the name and marks columns of all students from the student table.
 
-```sql
-SELECT name, marks FROM student;
-```
+- The roll number column should not be displayed.
 
-**Output:**
+**Task 2: Filter Students Using WHERE**
 
-| name | marks |
-|---|---:|
-| Asha | 78 |
-| Rohan | 64 |
-| Neha | 88 |
-| Deepak | 52 |
+- Retrieve all columns of students whose marks are greater than 60.
 
-**Result:** Successfully displayed only the name and marks of all students.
+- Only students satisfying the given condition should appear in the result.
 
-### Task 2: Show all columns of students whose marks are greater than 60.
+**Task 3: Search Student Using Roll Number**
 
-**SQL Query:**
+- Retrieve the name of the student whose roll number is 103.
 
-```sql
-SELECT * FROM student
-WHERE marks > 60;
-```
+- Display only the student's name in the result.
 
-**Output:**
+Objectives
 
-| roll_no | name | marks |
-|---|---|---:|
-| 101 | Asha | 78 |
-| 102 | Rohan | 64 |
-| 103 | Neha | 88 |
+- To understand the SELECT statement.
+- To retrieve specific columns from a table.
+- To filter records using conditions.
+- To understand the WHERE clause.
+- To search records using specific values.
 
-**Result:** Successfully displayed all student records having marks greater than 60.
+Concepts Used
 
-### Task 3: Show the name of the student whose roll number is 103.
+- SELECT
+- WHERE
+- Column Selection
+- Conditional Filtering
+- Comparison Operators
 
-**SQL Query:**
+Conclusion
 
-```sql
-SELECT name FROM student
-WHERE roll_no = 103;
-```
-
-**Output:**
-
-| name |
-|---|
-| Neha |
-
-**Result:** Successfully displayed the name of the student whose roll number is 103.
-
-### Conclusion
-
-In this assignment, we learned how to use the SELECT statement to retrieve specific columns and the WHERE clause to retrieve rows based on a given condition.
+Successfully retrieved selected columns and filtered student records using different conditions with the SELECT statement and WHERE clause.

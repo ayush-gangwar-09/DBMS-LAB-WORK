@@ -1,8 +1,14 @@
 # Assignment 7: Using Aggregate Functions
 
-**Aim:** To use aggregate functions in SQL to perform calculations and retrieve summarized information from a table.
+# Aim
 
-## Theory
+To perform calculations on multiple records using aggregate functions in SQL.
+
+# Problem Statement
+
+Create a sales table containing salesperson names, regions and sales amounts. Perform different calculations on the sales records using aggregate functions.
+
+# Theory
 
 Aggregate functions in SQL are used to perform calculations on multiple rows and return a single result.
 
@@ -12,79 +18,43 @@ Aggregate functions in SQL are used to perform calculations on multiple rows and
 4. `MIN()` – Finds the lowest value.
 5. `AVG()` – Calculates the average value.
 
-## Step 1: Create Database
 
-```sql
-CREATE DATABASE IF NOT EXISTS college;
-USE college;
-```
+# Tasks
 
-## Step 2: Create Table
+**Task 1: Count Total Sales Records**
 
-```sql
-CREATE TABLE sales (
-    salesperson VARCHAR(20),
-    region VARCHAR(20),
-    amount INT
-);
-```
+- Count the total number of records available in the sales table.
+- Use the COUNT() function.
+- Display the total number of sales records.
 
-## Step 3: Insert Records
+**Task 2: Calculate Total Sales**
 
-```sql
-INSERT INTO sales (salesperson, region, amount)
-VALUES
-('Deepak', 'North', 12000),
-('Pooja', 'South', 8500),
-('Deepak', 'South', 9500),
-('Lata', 'North', 11000);
-```
+- Calculate the sum of all sales amounts.
+- Use the SUM() function.
+- Display the total sales amount.
 
-## Step 4: Count the Total Number of Sales Rows
+**Task 3: Find Highest Sale**
 
-```sql
-SELECT COUNT(*) AS num_sales
-FROM sales;
-```
+- Retrieve the maximum sales amount from the table.
+- Use the MAX() function.
+- Display the highest recorded sale.
 
-**Output:**
+# Objectives
 
-```text
-num_sales
----------
-4
-```
+- To understand aggregate functions in SQL.
+- To count records using COUNT().
+- To calculate totals using SUM().
+- To find maximum values using MAX().
+- To perform calculations on table records.
 
-## Step 5: Calculate the Total of All Amounts
+# Concepts Used
 
-```sql
-SELECT SUM(amount) AS total
-FROM sales;
-```
+- SELECT
+- COUNT()
+- SUM()
+- MAX()
+- Aggregate Functions
 
-**Output:**
+# Conclusion
 
-```text
-total
------
-41000
-```
-
-## Step 6: Find the Highest Amount
-
-```sql
-SELECT MAX(amount) AS highest
-FROM sales;
-```
-
-**Output:**
-
-```text
-highest
--------
-12000
-```
-
-## Result
-
-Successfully executed SQL aggregate functions COUNT(), SUM(), and MAX() to count sales records, calculate the total amount, and find the highest sales amount.
+Successfully performed calculations on sales records using aggregate functions such as COUNT(), SUM() and MAX() in SQL.

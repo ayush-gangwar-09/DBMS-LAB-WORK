@@ -1,70 +1,63 @@
 
 # Assignment 14: Creating and Using a View
 
-**Aim:** To save a query as a view, then read the view.
+# Aim
 
-## Theory
+To create and use a database view for displaying selected records from a table.
+
+# Problem Statement
+
+Create a score table containing student names, subjects and marks. Create a view to display students who have obtained marks greater than or equal to 70.
+
+# Theory
 
 A View in SQL is a virtual table based on the result of an SQL query. It is used to display selected data from one or more tables.
 
-1. CREATE VIEW – Used to create a new view.
-2. OR REPLACE – Used to replace an existing view.
-3. AS – Defines the SQL query for the view.
-4. WHERE – Used to filter records based on a condition.
-5. SELECT – Used to retrieve data from a table or view.
-6. ORDER BY – Used to sort records in ascending or descending order.
+1. `CREATE VIEW` – Used to create a new view.
+2. `OR REPLACE` – Used to replace an existing view.
+3. `AS` – Defines the SQL query for the view.
+4. `WHERE` – Used to filter records based on a condition.
+5. `SELECT` – Used to retrieve data from a table or view.
+6. `ORDER BY` – Used to sort records in ascending or descending order.
 
-## Step 1: Create Database
+# Tasks
 
-CREATE DATABASE IF NOT EXISTS college;
-USE college;
+**Task 1: Create a View for High Scores**
 
-## Step 2: Create Score Table
+- Create a view named high_scores.
+- Display student names and marks from the score table.
+- Include only those students whose marks are greater than or equal to 70.
+- Store the selected result in the view.
 
-CREATE TABLE score (
-    name VARCHAR(30),
-    subject VARCHAR(20),
-    marks INT
-);
+**Task 2: Retrieve Records from the View**
 
-## Step 3: Insert Score Records
+- Retrieve all records from the high_scores view.
+- Display the student names and their marks.
+- Show only the records satisfying the view condition.
 
-INSERT INTO score (name, subject, marks)
-VALUES
-('Asha', 'Maths', 78),
-('Rohan', 'Maths', 64),
-('Neha', 'Maths', 88),
-('Kiran', 'Maths', 52);
+**Task 3: Display Student Names from the View**
 
-## Step 4: Task 1 – Create a View Named high_scores
+- Retrieve student names from the high_scores view.
+- Arrange the names in ascending alphabetical order.
+- Display the sorted student names.
 
-CREATE OR REPLACE VIEW high_scores AS
-SELECT name, marks
-FROM score
-WHERE marks >= 70;
+# Objectives
 
-## Step 5: Task 2 – Show All Rows of the View
+- To understand the concept of database views.
+- To create a view using CREATE VIEW.
+- To retrieve records from a view.
+- To filter records while creating a view.
+- To understand how views simplify data retrieval.
 
-SELECT * FROM high_scores;
+# Concepts Used
 
-**Output:**
+- CREATE VIEW
+- SELECT
+- WHERE
+- ORDER BY
+- Database Views
+- Conditional Filtering
 
-name       marks
-Asha         78
-Neha         88
+# Conclusion
 
-## Step 6: Task 3 – Show Only Names in Sorted Order
-
-SELECT name
-FROM high_scores
-ORDER BY name ASC;
-
-**Output:**
-
-name
-Asha
-Neha
-
-## Result
-
-Successfully created a view named high_scores and retrieved records from the view using SELECT statements. Also displayed names in alphabetical order using ORDER BY.
+Successfully created and used a database view to display selected student records based on marks and retrieved the required information from the view.

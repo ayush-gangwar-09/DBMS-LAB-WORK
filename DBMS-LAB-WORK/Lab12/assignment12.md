@@ -1,88 +1,60 @@
-
 # Assignment 12: Using a Subquery
 
-**Aim:** To use one query inside another query, with IN.
+# Aim
 
-## Theory
+To retrieve data from a database table using nested queries, also known as subqueries.
+
+# Problem Statement
+
+Create two tables named club_a and club_b containing member names. Retrieve common member information and perform operations using subqueries.
+
+# Theory
 
 A subquery is a query written inside another SQL query. It is also called a nested query.
 
-1. SUBQUERY – A query written inside another query.
-2. IN – Checks whether a value matches any value returned by the subquery.
-3. COUNT() – Used to count the number of records in a table.
-4. ORDER BY – Used to sort the records.
-5. ASC – Arranges records in ascending order.
+1. `SUBQUERY` – A query written inside another query.
+2. `IN` – Checks whether a value matches any value returned by the subquery.
+3. `COUNT()` – Used to count the number of records in a table.
+4. `ORDER BY` – Used to sort the records.
+5. `ASC` – Arranges records in ascending order.
 
-## Step 1: Create Database
+# Tasks
 
-CREATE DATABASE IF NOT EXISTS college;
-USE college;
+**Task 1: Find Common Members Using a Subquery**
 
-## Step 2: Create Club A Table
+- Retrieve the names of members who are present in both club_a and club_b.
+- Use a subquery with the IN operator.
+- Display only the common member names.
 
-CREATE TABLE club_a (
-    student_name VARCHAR(30)
-);
+**Task 2: Count Members in Club B**
 
-## Step 3: Insert Club A Records
+- Calculate the total number of members present in club_b.
+- Use the COUNT() aggregate function.
+- Display the total number of members.
 
-INSERT INTO club_a (student_name)
-VALUES
-('Asha'),
-('Rohan'),
-('Neha');
+**Task 3: Display Club A Members**
 
-## Step 4: Create Club B Table
+- Retrieve all member names from club_a.
+- Arrange the names in ascending alphabetical order.
+- Display the sorted list of members.
 
-CREATE TABLE club_b (
-    student_name VARCHAR(30)
-);
+# Objectives
 
-## Step 5: Insert Club B Records
+- To understand the concept of subqueries.
+- To execute nested SQL queries.
+- To use the IN operator with a subquery.
+- To retrieve common records from multiple tables.
+- To count and sort records.
 
-INSERT INTO club_b (student_name)
-VALUES
-('Neha'),
-('Pooja'),
-('Meera');
+# Concepts Used
 
-## Step 6: Find Common Student Names Using Subquery
+- SELECT
+- Subquery
+- IN Operator
+- COUNT()
+- ORDER BY
+- Nested Queries
 
-SELECT student_name
-FROM club_a
-WHERE student_name IN (
-    SELECT student_name
-    FROM club_b
-);
+# Conclusion
 
-**Output:**
-
-student_name
-Neha
-
-## Step 7: Count Members in Club B
-
-SELECT COUNT(*) AS members
-FROM club_b;
-
-**Output:**
-
-members
-3
-
-## Step 8: Display Names in Sorted Order
-
-SELECT student_name
-FROM club_a
-ORDER BY student_name ASC;
-
-**Output:**
-
-student_name
-Asha
-Neha
-Rohan
-
-## Result
-
-Successfully created two tables and performed SQL operations using a Subquery with the IN operator, COUNT() function and ORDER BY clause.
+Successfully used subqueries and the IN operator to retrieve common member records and performed counting and sorting operations on club tables.

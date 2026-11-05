@@ -1,83 +1,47 @@
 # Assignment 4: Combining Conditions
 
-AIM
+# Aim
 
+To retrieve records from a database table by combining multiple conditions using logical operators such as AND, OR and IN.
 
-To combine conditions with AND, check a range with BETWEEN, and check a list with IN in SQL.
+# Problem Statement
 
-### Set-up: Create Table and Insert Records
+Create a player table containing player names, team names and runs. Retrieve player records according to different conditions using logical operators.
 
-```sql
-CREATE TABLE player (
-    name VARCHAR(30),
-    team VARCHAR(20),
-    runs INT
-);
+# Tasks
 
-INSERT INTO player (name, team, runs)
-VALUES
-('Asha', 'Eagles', 45),
-('Meera', 'Tigers', 72),
-('Arjun', 'Eagles', 30),
-('Kiran', 'Lions', 88);
-```
+**Task 1: Filter Players Using AND**
 
-### Task 1: Show the name and runs of players from Eagles who scored more than 35 runs. Use AND.
+- Retrieve the players whose team is Eagles and runs are greater than 35.
+- Both conditions must be satisfied.
 
-**SQL Query:**
+**Task 2: Filter Runs Within a Range**
 
-```sql
-SELECT name, runs
-FROM player
-WHERE team = 'Eagles' AND runs > 35;
-```
+- Retrieve players whose runs are between 40 and 80.
+- Display only those players whose runs fall within the specified range.
 
-**Output:**
+**Task 3: Filter Teams Using IN**
 
-| name | runs |
-|---|---:|
-| Asha | 45 |
+- Retrieve players who belong to either Tigers or Lions teams.
+- Use the IN operator to check multiple team values.
 
-**Result:** Successfully displayed the name and runs of Eagles players who scored more than 35 runs.
+# Objectives
 
-### Task 2: Show the name and runs of players whose runs are between 40 and 80. Use BETWEEN.
+- To understand logical operators in SQL.
+- To combine multiple conditions using AND.
+- To filter records within a range.
+- To use the IN operator.
+- To retrieve records based on multiple conditions.
 
-**SQL Query:**
+# Concepts Used
 
-```sql
-SELECT name, runs
-FROM player
-WHERE runs BETWEEN 40 AND 80;
-```
+- SELECT
+- WHERE
+- AND Operator
+- BETWEEN Operator
+- IN Operator
+- Logical Conditions
 
-**Output:**
+# Conclusion
 
-| name | runs |
-|---|---:|
-| Asha | 45 |
-| Meera | 72 |
-
-**Result:** Successfully displayed the players whose runs are between 40 and 80.
-
-### Task 3: Show the name and team of players who play for Tigers or Lions. Use IN.
-
-**SQL Query:**
-
-```sql
-SELECT name, team
-FROM player
-WHERE team IN ('Tigers', 'Lions');
-```
-
-**Output:**
-
-| name | team |
-|---|---|
-| Meera | Tigers |
-| Kiran | Lions |
-
-**Result:** Successfully displayed the players belonging to Tigers or Lions using IN.
-
-### Conclusion
-
-In this assignment, we learned how to use AND, BETWEEN, and IN operators in SQL to retrieve records based on different conditions.
+Successfully retrieved player records by combining multiple conditions using logical operators and filtering techniques in SQL.

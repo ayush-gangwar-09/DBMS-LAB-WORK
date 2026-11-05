@@ -1,6 +1,12 @@
 # Assignment 9: Aliases and CASE
 
-**Aim:** To give columns new names and show a value chosen by a condition using SQL commands.
+# Aim
+
+To use column aliases for displaying meaningful column names and apply conditional logic using the CASE expression in SQL.
+
+# Problem Statement
+
+Create an exam_result table containing student names and marks. Retrieve student information using aliases and classify students according to their marks using conditional expressions.
 
 ## Theory
 
@@ -13,97 +19,46 @@ SQL provides aliases and CASE expressions to display data in a meaningful way.
 5. `ELSE` – Defines the result when the condition is false.
 6. `END` – Used to end the CASE expression.
 
-## Step 1: Create Database
+# Tasks
 
-```sql
-CREATE DATABASE IF NOT EXISTS college;
-USE college;
-```
+**Task 1: Display Columns Using Aliases**
 
-## Step 2: Create Table
+- Retrieve student names and marks from the exam_result table.
+- Display the name column with the alias student_name.
+- Display the marks column with the alias score.
 
-```sql
-CREATE TABLE exam_result (
-    name VARCHAR(20),
-    marks INT
-);
-```
+**Task 2: Classify Students as Pass or Fail**
 
-## Step 3: Insert Records
+- Check the marks obtained by each student.
+- Display "Pass" if marks are greater than or equal to 40.
+- Display "Fail" if marks are less than 40.
+- Use the CASE expression to apply the conditions.
 
-```sql
-INSERT INTO exam_result (name, marks)
-VALUES
-('Asha', 92),
-('Rohan', 47),
-('Neha', 68),
-('Meera', 33);
-```
+**Task 3: Add Bonus Marks**
 
-## Task 1: Show the name and marks. Name the columns student_name and score using AS.
+- Retrieve student names and marks.
+- Add 5 bonus marks to the original marks.
+- Display the calculated marks using the alias with_bonus.
 
-**SQL Query:**
+# Objectives
 
-```sql
-SELECT name AS student_name, marks AS score
-FROM exam_result;
-```
+- To understand column aliases.
+- To display meaningful column names.
+- To understand conditional expressions.
+- To classify records using CASE.
+- To perform calculations on column values.
 
-**Output:**
+# Concepts Used
 
-```text
-student_name    score
----------------------
-Asha              92
-Rohan             47
-Neha              68
-Meera             33
-```
+- SELECT
+- AS (Alias)
+- CASE Expression
+- WHEN and THEN
+- ELSE
+- Conditional Logic
 
-## Task 2: Show the name and a column named result. The result is Pass if the marks are 40 or more, otherwise Fail. Use CASE.
+# Conclusion
 
-**SQL Query:**
+Successfully used aliases to rename columns, applied conditional logic using CASE and performed calculations on student marks in SQL.
 
-```sql
-SELECT name,
-CASE
-    WHEN marks >= 40 THEN 'Pass'
-    ELSE 'Fail'
-END AS result
-FROM exam_result;
-```
 
-**Output:**
-
-```text
-name      result
-----------------
-Asha      Pass
-Rohan     Pass
-Neha      Pass
-Meera     Fail
-```
-
-## Task 3: Show the name and the marks with 5 bonus marks added. Name this column with_bonus.
-
-**SQL Query:**
-
-```sql
-SELECT name, marks + 5 AS with_bonus
-FROM exam_result;
-```
-
-**Output:**
-
-```text
-name      with_bonus
---------------------
-Asha          97
-Rohan         52
-Neha          73
-Meera         38
-```
-
-## Result
-
-Successfully executed SQL queries using AS aliases and CASE expressions to rename columns, display results based on conditions, and calculate marks with bonus marks.

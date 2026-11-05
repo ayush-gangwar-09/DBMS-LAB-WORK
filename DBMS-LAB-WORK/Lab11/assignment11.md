@@ -1,8 +1,14 @@
 # Assignment 11: Other Kinds of Joins
 
-**Aim:** To use a LEFT JOIN, a CROSS JOIN and a NATURAL JOIN on two small tables.
+# Aim
 
-## Theory
+To understand and implement different types of SQL joins, including LEFT JOIN, CROSS JOIN and NATURAL JOIN.
+
+# Problem Statement
+
+Create team and player tables containing team information and player details. Retrieve related and combined records using different types of joins.
+
+# Theory
 
 SQL JOIN is used to combine data from two or more tables.
 
@@ -12,123 +18,45 @@ SQL JOIN is used to combine data from two or more tables.
 4. `ON` – Specifies the matching condition between two tables.
 5. `ORDER BY` – Used to sort the result.
 
-## Step 1: Create Database
+# Tasks
 
-```sql
-CREATE DATABASE IF NOT EXISTS college;
-USE college;
-```
+**Task 1: Perform LEFT JOIN**
 
-## Step 2: Create Team Table
+- Combine the team and player tables using LEFT JOIN.
+- Display all teams along with their corresponding players.
+- Include teams even if they do not have any players.
+- Display NULL values where no matching player exists.
 
-```sql
-CREATE TABLE team (
-    team_id INT,
-    team_name VARCHAR(20)
-);
-```
+**Task 2: Perform CROSS JOIN**
 
-## Step 3: Insert Team Records
+- Combine every record from the team table with every record from the player table.
+- Generate all possible combinations of teams and players.
+- Display the combined result.
 
-```sql
-INSERT INTO team (team_id, team_name)
-VALUES
-(1, 'Eagles'),
-(2, 'Tigers'),
-(3, 'Lions');
-```
+**Task 3: Perform NATURAL JOIN**
 
-## Step 4: Create Player Table
+- Combine the player and team tables using NATURAL JOIN.
+- Automatically match records using columns having the same name.
+- Display the related player and team information.
 
-```sql
-CREATE TABLE player (
-    player_name VARCHAR(30),
-    team_id INT,
-    age INT
-);
-```
+# Objectives
 
-## Step 5: Insert Player Records
+- To understand different types of SQL joins.
+- To implement LEFT JOIN.
+- To understand CROSS JOIN and its combinations.
+- To implement NATURAL JOIN.
+- To retrieve related information from multiple tables.
 
-```sql
-INSERT INTO player (player_name, team_id, age)
-VALUES
-('Asha', 1, 24),
-('Meera', 1, 22),
-('Arjun', 2, 27);
-```
+# Concepts Used
 
-## Task 1: Show each team name with the name of its players, including the team with no players. Use LEFT JOIN.
+- LEFT JOIN
+- CROSS JOIN
+- NATURAL JOIN
+- SELECT
+- NULL Values
+- Table Relationships
 
-**SQL Query:**
+# Conclusion
 
-```sql
-SELECT team.team_name, player.player_name
-FROM team
-LEFT JOIN player
-ON team.team_id = player.team_id
-ORDER BY team.team_name, player.player_name;
-```
+Successfully implemented LEFT JOIN, CROSS JOIN and NATURAL JOIN to combine records from multiple tables using different joining techniques.
 
-**Output:**
-
-```text
-team_name    player_name
-------------------------
-Eagles       Asha
-Eagles       Meera
-Lions        NULL
-Tigers       Arjun
-```
-
-## Task 2: Show every pair of team name and player name. Use CROSS JOIN.
-
-**SQL Query:**
-
-```sql
-SELECT team.team_name, player.player_name
-FROM team
-CROSS JOIN player
-ORDER BY team.team_name, player.player_name;
-```
-
-**Output:**
-
-```text
-team_name    player_name
-------------------------
-Eagles       Arjun
-Eagles       Asha
-Eagles       Meera
-Lions        Arjun
-Lions        Asha
-Lions        Meera
-Tigers       Arjun
-Tigers       Asha
-Tigers       Meera
-```
-
-## Task 3: Show each player name with the team name. Use NATURAL JOIN.
-
-**SQL Query:**
-
-```sql
-SELECT player_name, team_name
-FROM player
-NATURAL JOIN team
-ORDER BY player_name;
-```
-
-**Output:**
-
-```text
-player_name    team_name
-------------------------
-Arjun          Tigers
-Asha           Eagles
-Meera          Eagles
-```
-
-## Result
-
-Successfully executed SQL queries using LEFT JOIN, CROSS JOIN, and NATURAL JOIN to combine records from team and player tables and display the required results.

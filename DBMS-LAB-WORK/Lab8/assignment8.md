@@ -1,8 +1,14 @@
 # Assignment 8: Grouping Rows and Using HAVING
 
-**Aim:** To group the rows by region and check the totals of each group using SQL commands.
+# Aim
 
-## Theory
+To group records based on common values and filter grouped results using GROUP BY and HAVING clauses.
+
+# Problem Statement
+
+Create a shop_sale table containing salesperson names, regions and sales amounts. Group sales records according to regions and perform calculations on each group.
+
+# Theory
 
 SQL provides GROUP BY and HAVING clauses to group records and filter grouped data.
 
@@ -12,68 +18,43 @@ SQL provides GROUP BY and HAVING clauses to group records and filter grouped dat
 4. `HAVING` – Used to filter groups based on a condition.
 5. `ORDER BY` – Used to sort the results.
 
-## Step 1: Create Database
+# Tasks
 
-```sql
-CREATE DATABASE IF NOT EXISTS college;
-USE college;
-```
+**Task 1: Count Sales by Region**
 
-## Step 2: Create Table
+- Group all sales records according to their regions.
+- Count the number of sales records in each region.
+- Display the total count for every region.
 
-```sql
-CREATE TABLE shop_sale (
-    salesperson VARCHAR(20),
-    region VARCHAR(20),
-    amount INT
-);
-```
+**Task 2: Calculate Total Sales by Region**
 
-## Step 3: Insert Records
+- Group sales records according to their regions.
+- Calculate the total sales amount for each region.
+- Display the total sales of every region.
 
-```sql
-INSERT INTO shop_sale (salesperson, region, amount)
-VALUES
-('Deepak', 'North', 12000),
-('Pooja', 'South', 8500),
-('Deepak', 'South', 9500),
-('Lata', 'North', 11000);
-```
+**Task 3: Filter Groups Using HAVING**
 
-## Task 1: Show each region with the number of sales in it.
+- Calculate the total sales amount for each region.
+- Display only those regions where the total sales amount is greater than 20,000.
+- Use the HAVING clause to filter grouped results.
 
-**SQL Query:**
+# Objectives
 
-```sql
-SELECT region, COUNT(*) AS num_sales
-FROM shop_sale
-GROUP BY region
-ORDER BY region;
-```
+- To understand the GROUP BY clause.
+- To group records based on common values.
+- To perform aggregate calculations on groups.
+- To understand the HAVING clause.
+- To filter grouped records using conditions.
 
-**Output:**
+# Concepts Used
 
-```text
-region    num_sales
--------------------
-North          2
-South          2
-```
+- SELECT
+- GROUP BY
+- HAVING
+- COUNT()
+- SUM()
+- Aggregate Functions
 
-## Task 2: Show each region with the total amount in it.
+# Conclusion
 
-**SQL Query:**
-
-```sql
-SELECT region, SUM(amount) AS total
-FROM shop_sale
-GROUP BY region
-ORDER BY region;
-```
-
-**Output:**
-
-```text
-region    total
-----------------
-North     230
+Successfully grouped sales records according to regions and filtered grouped results using GROUP BY and HAVING clauses in SQL.
